@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#001b61",
+              "surface-container": "#131342",
+              "surface-bright": "#24255f",
+              "on-secondary-fixed-variant": "#591bdc",
+              "inverse-on-surface": "#50517a",
+              "tertiary-dim": "#ef8cde",
+              "error-container": "#a70138",
+              secondary: "#a68cff",
+              "tertiary-container": "#fe99ed",
+              "on-secondary": "#25006b",
+              "outline-variant": "#43446c",
+              "error-dim": "#d73357",
+              "on-primary-fixed-variant": "#002376",
+              "secondary-dim": "#7e51ff",
+              "secondary-container": "#591adc",
+              "surface-variant": "#1e1f55",
+              "on-tertiary-fixed": "#450042",
+              "primary-fixed": "#809bff",
+              "on-error": "#490013",
+              "on-tertiary-fixed-variant": "#701c6a",
+              outline: "#71729d",
+              "on-tertiary-container": "#661060",
+              "on-primary": "#00257b",
+              "secondary-fixed-dim": "#cabaff",
+              "tertiary-fixed": "#fe99ed",
+              primary: "#94aaff",
+              "secondary-fixed": "#d8caff",
+              "on-tertiary": "#711d6a",
+              "surface-container-highest": "#1e1f55",
+              "on-surface-variant": "#a7a7d5",
+              "tertiary-fixed-dim": "#ef8cde",
+              "on-secondary-fixed": "#3b00a0",
+              "on-surface": "#e5e3ff",
+              "primary-container": "#809bff",
+              "surface-container-low": "#0d0d38",
+              "on-error-container": "#ffb2b9",
+              "on-background": "#e5e3ff",
+              "inverse-primary": "#004eea",
+              "on-primary-fixed": "#000000",
+              error: "#ff6e84",
+              "on-secondary-container": "#e4daff",
+              "surface-tint": "#94aaff",
+              "primary-fixed-dim": "#6c8cff",
+              tertiary: "#ffb0ef",
+              surface: "#08082f",
+              "surface-container-lowest": "#000000",
+              "inverse-surface": "#fcf8ff",
+              "surface-dim": "#08082f",
+              "primary-dim": "#3367ff",
+              background: "#08082f",
+              "surface-container-high": "#18194b",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .hero-gradient {
+        background:
+          radial-gradient(
+            circle at 0% 0%,
+            rgba(148, 170, 255, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 100% 100%,
+            rgba(255, 176, 239, 0.1) 0%,
+            transparent 50%
+          );
+      }
+      .input-focus-ring:focus {
+        box-shadow: 0 4px 20px -5px rgba(148, 170, 255, 0.3);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen hero-gradient flex flex-col"
+  >
+    <main class="flex-grow flex items-center justify-center px-6 py-20">
+      <div
+        class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-xl shadow-[0_0_80px_rgba(0,0,0,0.5)]"
+      >
+        <div
+          class="hidden lg:block relative bg-surface-container-low p-16 flex flex-col justify-between"
+        >
+          <div class="z-10">
+            <h1
+              class="text-6xl font-headline font-extrabold tracking-tighter text-on-surface uppercase mb-6 leading-[0.9]"
+            >
+              NEON<br /><span class="text-primary">CURATOR</span>
+            </h1>
+            <p
+              class="text-on-surface-variant font-body text-lg max-w-sm leading-relaxed"
+            >
+              Access the most sophisticated hardware ecosystem in the digital
+              age. Your journey into precision begins here.
+            </p>
+          </div>
+          <div class="z-10 space-y-8">
+            <div class="flex items-start gap-4">
+              <div class="mt-1 bg-surface-variant p-2 rounded-lg">
+                <span
+                  class="material-symbols-outlined text-tertiary"
+                  data-icon="terminal"
+                  >terminal</span
+                >
+              </div>
+              <div>
+                <h3 class="font-headline font-bold text-on-surface">
+                  Hardware Archives
+                </h3>
+                <p class="text-sm text-on-surface-variant">
+                  Exclusive technical documentation and blueprints.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="mt-1 bg-surface-variant p-2 rounded-lg">
+                <span
+                  class="material-symbols-outlined text-tertiary"
+                  data-icon="speed"
+                  >speed</span
+                >
+              </div>
+              <div>
+                <h3 class="font-headline font-bold text-on-surface">
+                  Priority Precision
+                </h3>
+                <p class="text-sm text-on-surface-variant">
+                  Early access to high-velocity component drops.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-0 opacity-40 mix-blend-overlay">
+            <img
+              class="w-full h-full object-cover"
+              data-alt="Close-up of futuristic circuit board with glowing blue neon traces and metallic components in deep shadows"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh0HLOn_vHEb06j_MMsv7o_q1_KzX-vf5qtOrUm47hfg8usnJJM_bOMXyKPyqUq01evoKvonW6wHmCeY6kFgWaFdxM7EU9VVsdXiSKoF4GZWqk9XbmSgsGPLzt0xDO6nuj5ao3oiJmg8oSxrPiJiSspkhlVC4jFhaHcy7Md3vBi2qb1IGSDtHi8z2f6V8TW8_njyE6DvrtGoN8MCs-ioaUanmc9wWjEKE-iEKKX59Pk6Ase85WLMPLmgrQwIQl3BCNjhR0rMI7SOU"
+            />
+          </div>
+        </div>
+        <div
+          class="bg-surface-container-high p-8 md:p-16 lg:p-20 flex flex-col justify-center"
+        >
+          <div class="max-w-md mx-auto w-full">
+            <header class="mb-10 text-center lg:text-left">
+              <span
+                class="text-secondary text-xs font-label font-bold tracking-[0.2em] uppercase mb-4 block"
+                >New Entity Enrollment</span
+              >
+              <h2
+                class="text-3xl font-headline font-bold text-on-surface tracking-tight"
+              >
+                Create your profile.
+              </h2>
+            </header>
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 gap-6">
+                <div class="space-y-2">
+                  <label
+                    class="block text-[10px] font-label font-bold text-outline uppercase tracking-widest ml-1"
+                    for="name"
+                    >Full Name</label
+                  >
+                  <input
+                    class="w-full bg-surface-container-highest border-none rounded-md px-4 py-4 text-on-surface placeholder:text-outline/40 font-body focus:ring-0 focus:bg-surface-bright transition-all input-focus-ring"
+                    id="name"
+                    name="name"
+                    placeholder="ALEX MERCER"
+                    type="text"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="block text-[10px] font-label font-bold text-outline uppercase tracking-widest ml-1"
+                    for="email"
+                    >Email Address</label
+                  >
+                  <input
+                    class="w-full bg-surface-container-highest border-none rounded-md px-4 py-4 text-on-surface placeholder:text-outline/40 font-body focus:ring-0 focus:bg-surface-bright transition-all input-focus-ring"
+                    id="email"
+                    name="email"
+                    placeholder="ARCHIVE@NEONCURATOR.COM"
+                    type="email"
+                  />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="space-y-2">
+                    <label
+                      class="block text-[10px] font-label font-bold text-outline uppercase tracking-widest ml-1"
+                      for="password"
+                      >Password</label
+                    >
+                    <input
+                      class="w-full bg-surface-container-highest border-none rounded-md px-4 py-4 text-on-surface placeholder:text-outline/40 font-body focus:ring-0 focus:bg-surface-bright transition-all input-focus-ring"
+                      id="password"
+                      name="password"
+                      placeholder="••••••••"
+                      type="password"
+                    />
+                  </div>
+                  <div class="space-y-2">
+                    <label
+                      class="block text-[10px] font-label font-bold text-outline uppercase tracking-widest ml-1"
+                      for="confirm"
+                      >Verify</label
+                    >
+                    <input
+                      class="w-full bg-surface-container-highest border-none rounded-md px-4 py-4 text-on-surface placeholder:text-outline/40 font-body focus:ring-0 focus:bg-surface-bright transition-all input-focus-ring"
+                      id="confirm"
+                      name="confirm"
+                      placeholder="••••••••"
+                      type="password"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="pt-4">
+                <button
+                  class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-extrabold text-sm py-5 rounded-md tracking-widest uppercase hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-primary/10"
+                  type="submit"
+                >
+                  INITIALIZE REGISTRATION
+                </button>
+              </div>
+            </form>
+            <footer
+              class="mt-12 pt-8 border-t border-outline-variant/20 text-center"
+            >
+              <p class="text-sm text-on-surface-variant font-body">
+                Already a member?
+                <a
+                  class="text-primary hover:text-tertiary transition-colors font-bold ml-2 underline underline-offset-4"
+                  href="#"
+                >
+                  Authentication Portal
+                </a>
+              </p>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-[#0d0d38] w-full py-20 mt-32">
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-7xl mx-auto"
+      >
+        <div class="col-span-1 md:col-span-1">
+          <span
+            class="text-lg font-bold text-slate-100 font-headline uppercase tracking-tighter"
+            >NEON_CURATOR</span
+          >
+          <p class="text-slate-500 text-sm mt-4 leading-relaxed font-body">
+            Engineered for precision. Curating the future of high-end technology
+            interfaces and architectural hardware components.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <h4
+            class="text-on-surface font-headline font-bold text-xs uppercase tracking-widest"
+          >
+            Resources
+          </h4>
+          <ul class="space-y-2">
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm font-body transition-all hover:translate-x-1 inline-block"
+                href="#"
+                >Technical Support</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm font-body transition-all hover:translate-x-1 inline-block"
+                href="#"
+                >Archives</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h4
+            class="text-on-surface font-headline font-bold text-xs uppercase tracking-widest"
+          >
+            Company
+          </h4>
+          <ul class="space-y-2">
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm font-body transition-all hover:translate-x-1 inline-block"
+                href="#"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm font-body transition-all hover:translate-x-1 inline-block"
+                href="#"
+                >Terms of Service</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h4
+            class="text-on-surface font-headline font-bold text-xs uppercase tracking-widest"
+          >
+            Logistics
+          </h4>
+          <ul class="space-y-2">
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm font-body transition-all hover:translate-x-1 inline-block"
+                href="#"
+                >Shipping &amp; Returns</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm font-body transition-all hover:translate-x-1 inline-block"
+                href="#"
+                >Store Locator</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto px-12 mt-20 pt-8 border-t border-outline-variant/10"
+      >
+        <p class="text-slate-500 text-xs font-body tracking-wide">
+          © 2024 NEON CURATOR. ENGINEERED FOR PRECISION.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

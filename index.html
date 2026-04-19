@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Store</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />``
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#001b61",
+              "surface-container": "#131342",
+              "surface-bright": "#24255f",
+              "on-secondary-fixed-variant": "#591bdc",
+              "inverse-on-surface": "#50517a",
+              "tertiary-dim": "#ef8cde",
+              "error-container": "#a70138",
+              secondary: "#a68cff",
+              "tertiary-container": "#fe99ed",
+              "on-secondary": "#25006b",
+              "outline-variant": "#43446c",
+              "error-dim": "#d73357",
+              "on-primary-fixed-variant": "#002376",
+              "secondary-dim": "#7e51ff",
+              "secondary-container": "#591adc",
+              "surface-variant": "#1e1f55",
+              "on-tertiary-fixed": "#450042",
+              "primary-fixed": "#809bff",
+              "on-error": "#490013",
+              "on-tertiary-fixed-variant": "#701c6a",
+              outline: "#71729d",
+              "on-tertiary-container": "#661060",
+              "on-primary": "#00257b",
+              "secondary-fixed-dim": "#cabaff",
+              "tertiary-fixed": "#fe99ed",
+              primary: "#94aaff",
+              "secondary-fixed": "#d8caff",
+              "on-tertiary": "#711d6a",
+              "surface-container-highest": "#1e1f55",
+              "on-surface-variant": "#a7a7d5",
+              "tertiary-fixed-dim": "#ef8cde",
+              "on-secondary-fixed": "#3b00a0",
+              "on-surface": "#e5e3ff",
+              "primary-container": "#809bff",
+              "surface-container-low": "#0d0d38",
+              "on-error-container": "#ffb2b9",
+              "on-background": "#e5e3ff",
+              "inverse-primary": "#004eea",
+              "on-primary-fixed": "#000000",
+              error: "#ff6e84",
+              "on-secondary-container": "#e4daff",
+              "surface-tint": "#94aaff",
+              "primary-fixed-dim": "#6c8cff",
+              tertiary: "#ffb0ef",
+              surface: "#08082f",
+              "surface-container-lowest": "#000000",
+              "inverse-surface": "#fcf8ff",
+              "surface-dim": "#08082f",
+              "primary-dim": "#3367ff",
+              background: "#08082f",
+              "surface-container-high": "#18194b",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #08082f;
+        color: #e5e3ff;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #94aaff 0%, #809bff 100%);
+      }
+      .glass-nav {
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface selection:bg-tertiary selection:text-on-tertiary"
+  >
+    <header
+      class="fixed top-0 w-full z-50 bg-[#08082f]/80 backdrop-blur-2xl shadow-[0_0_40px_rgba(229,227,255,0.08)]"
+    >
+      <nav class="flex justify-between items-center px-12 h-24 w-full">
+        <div
+          class="text-2xl font-black tracking-tighter text-slate-100 uppercase font-headline"
+        >
+          NEON_CURATOR
+        </div>
+        <div
+          class="hidden md:flex items-center space-x-10 font-['Manrope'] tracking-tight"
+        >
+          <a
+            class="text-blue-400 border-b-2 border-pink-400 pb-1 font-bold"
+            href="#"
+            >Discover</a
+          >
+          <a
+            class="text-slate-400 font-medium hover:text-slate-100 transition-all duration-300"
+            href="#"
+            >Hardware</a
+          >
+          <a
+            class="text-slate-400 font-medium hover:text-slate-100 transition-all duration-300"
+            href="#"
+            >Editorial</a
+          >
+          <a
+            class="text-slate-400 font-medium hover:text-slate-100 transition-all duration-300"
+            href="#"
+            >Archives</a
+          >
+        </div>
+        <div class="flex items-center space-x-6">
+          <div class="relative hidden lg:block">
+            <input
+              class="bg-surface-container-highest border-none rounded-lg py-2 px-4 text-xs tracking-widest focus:ring-1 focus:ring-tertiary w-64 text-on-surface placeholder:text-slate-500 uppercase"
+              placeholder="SEARCH SYSTEM..."
+              type="text"
+            />
+          </div>
+          <div class="flex items-center space-x-4">
+            <button
+              class="scale-95 active:scale-90 transition-transform hover:bg-blue-900/20 p-2 rounded-full"
+            >
+              <span
+                class="material-symbols-outlined text-blue-400"
+                data-icon="shopping_cart"
+                >shopping_cart</span
+              >
+            </button>
+            <button
+              class="scale-95 active:scale-90 transition-transform hover:bg-blue-900/20 p-2 rounded-full"
+            >
+              <span
+                class="material-symbols-outlined text-blue-400"
+                data-icon="person"
+                >person</span
+              >
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="pt-24 overflow-hidden">
+      <section class="relative min-h-[921px] flex items-center px-12 py-20">
+        <div
+          class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-[80%] opacity-40 mix-blend-screen pointer-events-none"
+        >
+          <img
+            class="w-full h-full object-contain object-right scale-110"
+            data-alt="ultra-modern minimalist laptop with glowing neon blue edges floating in a dark atmospheric studio with soft smoke effects"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVbrRuNkJEOY_cjZa7oktJ12yOBrDIwZsA_d1QfAfcInVk5g2p5Tj-yZFCHJtFl5aLIStU-AtDVlDKkQ3p4qvZk0hhUlAK8t3Sb7M6lE9Hov-U-tb9XC7nc9xvbi-F_qfrq11qmviMNTTCOD96AYq4btAPooJ1H5xmcWxUo2tslVCo-T_vGtmHBZFgLNPPdRt_5T9rR5PCeZeEPQSOXbmRbr845o97Id8fUwlHxun4DO4i2X5cgA9jVi0CUG8TUJ7a5W7e2YYdUlA"
+          />
+        </div>
+        <div class="relative z-10 max-w-3xl">
+          <span
+            class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container text-[0.6875rem] font-bold uppercase tracking-[0.2em] mb-8 rounded-full"
+            >New Evolution 2024</span
+          >
+          <h1
+            class="font-headline text-[5rem] font-extrabold leading-[0.9] tracking-tighter mb-8 text-on-surface"
+          >
+            HYPER_DRIVE <br />
+            <span class="text-primary">SERIES VII.</span>
+          </h1>
+          <p
+            class="font-body text-lg text-on-surface-variant max-w-md mb-12 leading-relaxed"
+          >
+            Engineered for the vanguard. A fusion of crystalline architecture
+            and neural processing power. Experience tech as a curated
+            exhibition.
+          </p>
+          <div class="flex items-center space-x-6">
+            <button
+              class="px-10 py-4 hero-gradient text-on-primary font-bold rounded-lg scale-95 active:scale-90 transition-transform flex items-center group"
+            >
+              EXPLORE SPECS
+              <span
+                class="material-symbols-outlined ml-3 transition-transform group-hover:translate-x-1"
+                data-icon="arrow_forward"
+                >arrow_forward</span
+              >
+            </button>
+            <button
+              class="px-10 py-4 border border-outline-variant hover:bg-surface-bright transition-colors text-on-surface font-bold rounded-lg"
+            >
+              VIEW LOOKBOOK
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-12 py-32 space-y-20">
+        <div class="flex justify-between items-end">
+          <div>
+            <h2
+              class="font-headline text-4xl font-bold tracking-tight mb-2 uppercase"
+            >
+              Core Sectors
+            </h2>
+            <p class="text-on-surface-variant">
+              The fundamental pillars of the curation.
+            </p>
+          </div>
+          <a
+            class="text-primary font-bold flex items-center hover:underline decoration-2 underline-offset-8"
+            href="#"
+          >
+            ALL CATEGORIES
+            <span class="material-symbols-outlined ml-2" data-icon="east"
+              >east</span
+            >
+          </a>
+        </div>
+        <div class="grid grid-cols-12 gap-8 h-[700px]">
+          <div
+            class="col-span-12 md:col-span-7 bg-surface-container-low rounded-xl overflow-hidden relative group"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"
+            ></div>
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="sleek professional laptops arranged in a minimalist layout with dramatic lighting on dark metallic surfaces"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQpt31guLXUg459bRKfJ9Mq6HXqPPvGDOU0RfPXajSUvQy7tNU45ylSuJIA928sA7GcpSVWEe8a1wkiCGXIuETBtWttdugB6iig0Dax0p9Un97PO0uXt9YLdFKy1bZAbyS_q3U6kgXff7pvLkH5RMcrkb55ckJ0EaZU3ZGHd-rVCY63P5MWMOmx1imRAwafYM8jd_AKmdLY6lwNHZOxzvkKZUb_dSEdGkiPWx0wdRQqAQNoPRr1DoeV_00UcHN1WKfrgnyWbchkAE"
+            />
+            <div class="absolute bottom-10 left-10 z-10">
+              <h3 class="font-headline text-3xl font-black mb-4">
+                ARCHITECTURAL COMPUTING
+              </h3>
+              <p class="text-on-surface-variant mb-6 max-w-xs">
+                High-performance workstations defined by precision milling.
+              </p>
+              <button
+                class="text-tertiary font-bold flex items-center hover:translate-x-2 transition-transform"
+              >
+                SHOP LAPTOPS
+                <span
+                  class="material-symbols-outlined ml-2"
+                  data-icon="trending_flat"
+                  >trending_flat</span
+                >
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="col-span-12 md:col-span-5 bg-surface-container-low rounded-xl overflow-hidden relative group"
+          >
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="macro shot of a high-end smartphone camera lens with iridescent reflections and deep blue background"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMt_SbcEFdxdLzQKSvj1m2_j5I-11nPR33Bh4kKAfknBg2SBH_25HeB7Fa2Tw5lxJkH2f8F65M3rct88SqNgOJELJX4r_KIv24imRZw1Y5PCSKyxAUu7nmDHkjKuReSU7eYkrptieHBdvB5v0UMp56fn1PsN_5Ct9KuNKth5R6q3jMJnB5VTXYbP1unt6mHIoy2rJUSZ6mLM6mOTxSbt5ybEzaTrENBzal6o6MJbnKSjTn5pcPEttYZ_USo8N4fREBkRGplzytLUY"
+            />
+            <div
+              class="absolute inset-0 bg-surface-container-highest/20 group-hover:bg-transparent transition-colors"
+            ></div>
+            <div class="absolute top-10 left-10 z-10">
+              <h3 class="font-headline text-2xl font-black mb-2">
+                NEURAL MOBILE
+              </h3>
+              <span
+                class="text-secondary text-sm font-bold uppercase tracking-widest"
+                >Next-Gen Interface</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="col-span-12 md:col-span-12 bg-surface-container-high rounded-xl overflow-hidden relative group flex items-center px-12"
+          >
+            <div class="w-1/2 pr-20">
+              <h3 class="font-headline text-3xl font-black mb-4 uppercase">
+                The Peripheral Lab
+              </h3>
+              <p class="text-on-surface-variant mb-8">
+                Audio, tactile inputs, and sensory enhancement tools designed to
+                complete the ecosystem.
+              </p>
+              <div class="flex gap-4">
+                <span
+                  class="px-4 py-2 bg-surface-variant rounded-full text-xs font-bold text-on-surface-variant"
+                  >HAPTICS</span
+                >
+                <span
+                  class="px-4 py-2 bg-surface-variant rounded-full text-xs font-bold text-on-surface-variant"
+                  >AUDIO-SPATIAL</span
+                >
+                <span
+                  class="px-4 py-2 bg-surface-variant rounded-full text-xs font-bold text-on-surface-variant"
+                  >OPTICS</span
+                >
+              </div>
+            </div>
+            <div class="w-1/2 h-full">
+              <img
+                class="w-full h-full object-contain transition-transform duration-700 group-hover:rotate-3 group-hover:scale-105"
+                data-alt="futuristic transparent headphones and mechanical keyboard on a glowing geometric surface"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQk_X8US4pY_N7NSvoafPqDpSkbFzC92wmhcfF0GWcaVhzBXiVAbjv4e75YTOtsGmJwQvKIM958ALInWGAMmwA3sRSsNCpHSX4v3fC7NDSLrX0LQYF4vCy-ZLm2PFKv1-TPoGMsT_OFuJqbSuFDDTeBn_8ahhn_W-CSB5UzdpJR73961FrIDIeHzX0btnLFZVjzoPSOP4_4KaqHsjPLxTsqfpx1byyw2M2qIUJHahae5aPGTipI59J6rNbrhd6njIICAq1KcIKiiQ"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-surface-container-low py-32 px-12">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-24">
+            <h2 class="font-headline text-5xl font-black mb-6">
+              TRENDING_ASSETS
+            </h2>
+            <div class="h-1 w-24 bg-tertiary mx-auto"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="group">
+              <div
+                class="bg-surface-container rounded-xl aspect-[4/5] overflow-hidden mb-8 relative"
+              >
+                <img
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="ultra-thin grey tablet standing against a dark blue background with artistic shadows"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw7s2SDLQkBIIt2n35SdEzVsqU324PKnTHJzwu-rdADa_3KvG2XkebeXgEB1cTKdLtx3yFFMZKPpeHQBv5xpqrO3Jouf25lb33AyeOlqt4xEwktHuPhPaEUgzbRJuS_DRKcK-pNiNMl6o1NY907dWIr6mmDYV03eRxM_TVrWdVcxFOHka1B4LlEjAFmjClyikfu2sEwgMDBwsFjTnrQMQnKeaQ3TST6WM23l7dxvw4jBjBCzX0nVF9eDbhfoktHxnGdiihewe1sRo"
+                />
+                <button
+                  class="absolute bottom-6 right-6 bg-primary w-14 h-14 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-xl"
+                >
+                  <span
+                    class="material-symbols-outlined text-on-primary"
+                    data-icon="add"
+                    >add</span
+                  >
+                </button>
+              </div>
+              <div class="flex justify-between items-start">
+                <div>
+                  <span
+                    class="text-secondary text-[0.6875rem] font-bold uppercase tracking-widest"
+                    >Mobile Computing</span
+                  >
+                  <h4 class="font-headline text-xl font-bold mt-1 uppercase">
+                    S-12 Phantom Tablet
+                  </h4>
+                </div>
+                <span class="text-primary font-black text-xl">$1,299.00</span>
+              </div>
+            </div>
+
+            <div class="group">
+              <div
+                class="bg-surface-container rounded-xl aspect-[4/5] overflow-hidden mb-8 relative"
+              >
+                <img
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="professional silver laptop open with high-contrast screen showing technical blueprints"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-y19AozPImcx1ho9VOXusMP2XcSdxFs4TQ7VVFlj-9nhmbmNRoLjmZIXCar0Vh2Z6E-HxeUoQwU_qNIPfldLzbfbwdWKsp5KtgZDbFQnTuLUqtzTG6QDrGm_ju7XPLXxQe8tSwvI86PKF1IWA4dksxP2eJNCeSzcyrXj2khsTJeaoU10o31Pk09rwnrd64R4IqxTC08EKpOHGafRMGIP_yor4iwFM6aXd9Haqnuc3I4c7mrqE1P1dQYz7mhXzPyXuOhjGhsr-Ax8"
+                />
+                <button
+                  class="absolute bottom-6 right-6 bg-primary w-14 h-14 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-xl"
+                >
+                  <span
+                    class="material-symbols-outlined text-on-primary"
+                    data-icon="add"
+                    >add</span
+                  >
+                </button>
+              </div>
+              <div class="flex justify-between items-start">
+                <div>
+                  <span
+                    class="text-secondary text-[0.6875rem] font-bold uppercase tracking-widest"
+                    >Hardware</span
+                  >
+                  <h4 class="font-headline text-xl font-bold mt-1 uppercase">
+                    Zenith Pro 16
+                  </h4>
+                </div>
+                <span class="text-primary font-black text-xl">$2,499.00</span>
+              </div>
+            </div>
+
+            <div class="group">
+              <div
+                class="bg-surface-container rounded-xl aspect-[4/5] overflow-hidden mb-8 relative"
+              >
+                <img
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="over-ear noise cancelling headphones in matte black with subtle violet glowing accents"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkzVOW-OL4sp57oc2eCYH6Ads2Xwp6SeyH76pX4VJu3NcUPp32Kr8y5pbHMX3uYQx-5MvtJ7Sli6SRHR2vbTalnUIbV22PpTBiB5vmyC7UH98K4Rz6RjFWZF1UD1_JgZ28T3tN4V9jVkFiq7z3AMnjgFa4Ied_7Kr0cfLuIs3cFqocDlmt-obskhToJ3vYCPwjgUp5EJhlId0dSUyvUwt0CzgdeaWQzTwORioUJGCVh-wcBnuiG0WjLv4AYRaKQKssIDsAFZyTmBU"
+                />
+                <button
+                  class="absolute bottom-6 right-6 bg-primary w-14 h-14 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-xl"
+                >
+                  <span
+                    class="material-symbols-outlined text-on-primary"
+                    data-icon="add"
+                    >add</span
+                  >
+                </button>
+              </div>
+              <div class="flex justify-between items-start">
+                <div>
+                  <span
+                    class="text-secondary text-[0.6875rem] font-bold uppercase tracking-widest"
+                    >Acoustics</span
+                  >
+                  <h4 class="font-headline text-xl font-bold mt-1 uppercase">
+                    Void-1 ANC Headphones
+                  </h4>
+                </div>
+                <span class="text-primary font-black text-xl">$449.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-40 px-12 relative overflow-hidden">
+        <div class="absolute -right-20 top-0 w-1/2 h-full opacity-10">
+          <span class="text-[20rem] font-black leading-none select-none"
+            >NEON</span
+          >
+        </div>
+        <div
+          class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-20"
+        >
+          <div class="md:w-1/2">
+            <h2
+              class="font-headline text-6xl font-extrabold tracking-tighter mb-10 leading-tight uppercase"
+            >
+              Technology <br />As High
+              <span class="text-tertiary italic">Art.</span>
+            </h2>
+            <p class="font-body text-on-surface-variant text-lg mb-12 max-w-md">
+              We don't just sell electronics. We curate precision instruments
+              for the digital age. Every product is vetted for structural
+              integrity, performance velocity, and aesthetic purity.
+            </p>
+            <div class="space-y-6">
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center"
+                >
+                  <span
+                    class="material-symbols-outlined text-tertiary"
+                    data-icon="verified"
+                    >verified</span
+                  >
+                </div>
+                <span class="font-bold tracking-widest uppercase text-sm"
+                  >Certified Curator Quality</span
+                >
+              </div>
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center"
+                >
+                  <span
+                    class="material-symbols-outlined text-tertiary"
+                    data-icon="bolt"
+                    >bolt</span
+                  >
+                </div>
+                <span class="font-bold tracking-widest uppercase text-sm"
+                  >Instant Sync Infrastructure</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2 relative">
+            <div
+              class="bg-surface-container-highest w-full aspect-square rounded-2xl overflow-hidden"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="abstract close-up of high-tech brushed aluminum and circuit patterns with purple and blue light leaks"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-FwAhCOa8Izi0HTb_7HeXlXEQ1gVm1ENMwfbd4CNWM48SQKpFomr1WkKGCNC9jYoIsm0V9yPxs2P15nqP3bmj8alvS-UjgIzsU9rx9SHrlb4yCmBLKxnZ125xfessSKUQo-MVDmS4ULk6YNQvrx31TOoDx-dvTSg6tjOStUvpP6d3TMYTrl8BZZrX82IIK0OzJYVC_j8EitcBlUFEKR1QHHrVZvvHMBA7ghFc2lF4d8RVWpXcDNqYVBVcQFhnznmM4dQS6lMzUTE"
+              />
+            </div>
+            <div
+              class="absolute -bottom-10 -left-10 bg-surface-bright p-8 rounded-xl shadow-2xl border border-outline-variant max-w-xs"
+            >
+              <span
+                class="material-symbols-outlined text-tertiary text-4xl mb-4"
+                data-icon="auto_awesome"
+                >auto_awesome</span
+              >
+              <p class="font-headline text-xl font-bold mb-2">
+                ENGINEERED FUTURE
+              </p>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Join the inner circle for exclusive drops and technical
+                deep-dives.
+              </p>
+              <button
+                class="mt-6 text-primary font-bold text-xs uppercase tracking-widest"
+              >
+                JOIN COMMUNIQUE
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="w-full py-20 mt-32 bg-[#0d0d38] font-['Inter'] text-sm tracking-wide"
+    >
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-7xl mx-auto"
+      >
+        <div class="col-span-1 md:col-span-1">
+          <div class="text-lg font-bold text-slate-100 mb-6">NEON CURATOR</div>
+          <p class="text-slate-500 leading-relaxed mb-8">
+            Providing precision-engineered hardware for the modern visionary
+            since 2024.
+          </p>
+          <div class="flex space-x-4">
+            <a class="opacity-80 hover:opacity-100 text-blue-400" href="#"
+              ><span class="material-symbols-outlined" data-icon="public"
+                >public</span
+              ></a
+            >
+            <a class="opacity-80 hover:opacity-100 text-blue-400" href="#"
+              ><span class="material-symbols-outlined" data-icon="share"
+                >share</span
+              ></a
+            >
+          </div>
+        </div>
+        <div>
+          <h4
+            class="text-slate-100 font-bold mb-6 uppercase tracking-widest text-xs"
+          >
+            Resources
+          </h4>
+          <ul class="space-y-4">
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 hover:translate-x-1 transition-transform duration-200 block"
+                href="#"
+                >Technical Support</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 hover:translate-x-1 transition-transform duration-200 block"
+                href="#"
+                >Store Locator</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 hover:translate-x-1 transition-transform duration-200 block"
+                href="#"
+                >Archives</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="text-slate-100 font-bold mb-6 uppercase tracking-widest text-xs"
+          >
+            Policy
+          </h4>
+          <ul class="space-y-4">
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 hover:translate-x-1 transition-transform duration-200 block"
+                href="#"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 hover:translate-x-1 transition-transform duration-200 block"
+                href="#"
+                >Terms of Service</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 hover:translate-x-1 transition-transform duration-200 block"
+                href="#"
+                >Shipping &amp; Returns</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="text-slate-100 font-bold mb-6 uppercase tracking-widest text-xs"
+          >
+            Communique
+          </h4>
+          <div class="flex">
+            <input
+              class="bg-surface border-none text-xs w-full focus:ring-1 focus:ring-primary rounded-l-md py-3 px-4 uppercase tracking-tighter"
+              placeholder="EMAIL ADDRESS"
+              type="email"
+            />
+            <button class="bg-primary px-4 py-3 rounded-r-md text-on-primary">
+              <span class="material-symbols-outlined" data-icon="send"
+                >send</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-20 pt-10 border-t border-slate-800 text-center text-slate-600 text-[0.65rem] tracking-[0.3em] uppercase"
+      >
+        © 2024 NEON CURATOR. ENGINEERED FOR PRECISION.
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#001b61",
+              "surface-container": "#131342",
+              "surface-bright": "#24255f",
+              "on-secondary-fixed-variant": "#591bdc",
+              "inverse-on-surface": "#50517a",
+              "tertiary-dim": "#ef8cde",
+              "error-container": "#a70138",
+              secondary: "#a68cff",
+              "tertiary-container": "#fe99ed",
+              "on-secondary": "#25006b",
+              "outline-variant": "#43446c",
+              "error-dim": "#d73357",
+              "on-primary-fixed-variant": "#002376",
+              "secondary-dim": "#7e51ff",
+              "secondary-container": "#591adc",
+              "surface-variant": "#1e1f55",
+              "on-tertiary-fixed": "#450042",
+              "primary-fixed": "#809bff",
+              "on-error": "#490013",
+              "on-tertiary-fixed-variant": "#701c6a",
+              outline: "#71729d",
+              "on-tertiary-container": "#661060",
+              "on-primary": "#00257b",
+              "secondary-fixed-dim": "#cabaff",
+              "tertiary-fixed": "#fe99ed",
+              primary: "#94aaff",
+              "secondary-fixed": "#d8caff",
+              "on-tertiary": "#711d6a",
+              "surface-container-highest": "#1e1f55",
+              "on-surface-variant": "#a7a7d5",
+              "tertiary-fixed-dim": "#ef8cde",
+              "on-secondary-fixed": "#3b00a0",
+              "on-surface": "#e5e3ff",
+              "primary-container": "#809bff",
+              "surface-container-low": "#0d0d38",
+              "on-error-container": "#ffb2b9",
+              "on-background": "#e5e3ff",
+              "inverse-primary": "#004eea",
+              "on-primary-fixed": "#000000",
+              error: "#ff6e84",
+              "on-secondary-container": "#e4daff",
+              "surface-tint": "#94aaff",
+              "primary-fixed-dim": "#6c8cff",
+              tertiary: "#ffb0ef",
+              surface: "#08082f",
+              "surface-container-lowest": "#000000",
+              "inverse-surface": "#fcf8ff",
+              "surface-dim": "#08082f",
+              "primary-dim": "#3367ff",
+              background: "#08082f",
+              "surface-container-high": "#18194b",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(24px);
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #08082f;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Manrope", sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-x-hidden"
+  >
+    <main
+      class="flex-grow flex items-center justify-center relative py-20 px-6"
+    >
+      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] rounded-full bg-primary/10 blur-[120px]"
+        ></div>
+        <div
+          class="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-secondary/10 blur-[120px]"
+        ></div>
+      </div>
+      <div class="w-full max-w-md z-10">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center justify-center mb-6">
+            <span
+              class="text-3xl font-black tracking-tighter text-on-surface uppercase font-headline"
+              >NEON_CURATOR</span
+            >
+          </div>
+          <div class="space-y-2">
+            <p
+              class="text-tertiary text-xs font-bold tracking-[0.2em] uppercase font-label"
+            >
+              Authentication Portal
+            </p>
+            <h1
+              class="text-3xl font-extrabold text-on-surface tracking-tight font-headline"
+            >
+              Access Digital Archive
+            </h1>
+          </div>
+        </div>
+        <div
+          class="bg-surface-container-low p-8 rounded-xl shadow-[0_0_40px_rgba(229,227,255,0.03)] relative overflow-hidden group"
+        >
+          <div
+            class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/30 to-transparent"
+          ></div>
+          <form class="space-y-6">
+            <div class="space-y-2">
+              <label
+                class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider font-label px-1"
+                >Email Address</label
+              >
+              <div class="relative">
+                <input
+                  class="w-full bg-surface-container-highest border-none rounded-lg py-4 px-5 text-on-surface placeholder:text-outline-variant focus:ring-2 focus:ring-primary/50 transition-all duration-300 font-body outline-none"
+                  placeholder="archive@neoncurator.tech"
+                  type="email"
+                />
+                <div
+                  class="absolute bottom-0 left-0 w-0 h-[2px] bg-tertiary transition-all duration-500 group-focus-within:w-full"
+                ></div>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <div class="flex justify-between items-center px-1">
+                <label
+                  class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider font-label"
+                  >Security Key</label
+                >
+                <a
+                  class="text-[10px] text-primary-fixed-dim hover:text-primary uppercase tracking-widest font-bold transition-colors"
+                  href="#"
+                  >Forgot Access?</a
+                >
+              </div>
+              <div class="relative">
+                <input
+                  class="w-full bg-surface-container-highest border-none rounded-lg py-4 px-5 text-on-surface placeholder:text-outline-variant focus:ring-2 focus:ring-primary/50 transition-all duration-300 font-body outline-none"
+                  placeholder="••••••••••••"
+                  type="password"
+                />
+              </div>
+            </div>
+            <button
+              class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold py-4 rounded-lg tracking-tight hover:brightness-110 active:scale-[0.98] transition-all duration-200 shadow-lg shadow-primary/20 flex items-center justify-center gap-2"
+              type="submit"
+            >
+              <span>Initialize Session</span>
+              <span class="material-symbols-outlined text-sm" data-icon="login"
+                >login</span
+              >
+            </button>
+          </form>
+          <div class="relative my-10">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full h-px bg-outline-variant/30"></div>
+            </div>
+            <div
+              class="relative flex justify-center text-[10px] uppercase font-bold tracking-[0.3em]"
+            >
+              <span class="bg-surface-container-low px-4 text-outline"
+                >Third Party Proxy</span
+              >
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <button
+              class="flex items-center justify-center gap-3 bg-surface-container-high hover:bg-surface-bright text-on-surface py-3.5 rounded-lg border border-outline-variant/20 transition-all duration-300 active:scale-[0.97]"
+            >
+              <span class="material-symbols-outlined text-xl" data-icon="google"
+                >google</span
+              >
+              <span class="text-xs font-bold tracking-tight">Google</span>
+            </button>
+            <button
+              class="flex items-center justify-center gap-3 bg-surface-container-high hover:bg-surface-bright text-on-surface py-3.5 rounded-lg border border-outline-variant/20 transition-all duration-300 active:scale-[0.97]"
+            >
+              <span
+                class="material-symbols-outlined text-xl"
+                data-icon="apple"
+                data-weight="fill"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >ios</span
+              >
+              <span class="text-xs font-bold tracking-tight">Apple</span>
+            </button>
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <p class="text-on-surface-variant text-sm font-body">
+            New to the archive?
+            <a
+              class="text-secondary font-bold hover:text-tertiary transition-colors inline-flex items-center gap-1 group"
+              href="#"
+            >
+              Register Account
+              <span
+                class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform"
+                data-icon="arrow_forward"
+                >arrow_forward</span
+              >
+            </a>
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-[#0d0d38] w-full py-20 mt-32">
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-7xl mx-auto"
+      >
+        <div class="md:col-span-2">
+          <div
+            class="text-lg font-bold text-slate-100 mb-4 font-headline uppercase tracking-tight"
+          >
+            NEON CURATOR
+          </div>
+          <p class="text-slate-500 font-body text-sm max-w-xs leading-relaxed">
+            The premier destination for high-velocity hardware and digital
+            editorial excellence. Engineered for the future.
+          </p>
+        </div>
+        <div>
+          <h4
+            class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-6 font-label"
+          >
+            Navigation
+          </h4>
+          <ul class="space-y-4">
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm tracking-wide font-body block transition-transform duration-200 hover:translate-x-1"
+                href="#"
+                >Technical Support</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm tracking-wide font-body block transition-transform duration-200 hover:translate-x-1"
+                href="#"
+                >Store Locator</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-6 font-label"
+          >
+            Legal
+          </h4>
+          <ul class="space-y-4">
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm tracking-wide font-body block transition-transform duration-200 hover:translate-x-1"
+                href="#"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm tracking-wide font-body block transition-transform duration-200 hover:translate-x-1"
+                href="#"
+                >Terms of Service</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto px-12 mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <p class="text-slate-500 font-body text-sm tracking-wide">
+          © 2024 NEON CURATOR. ENGINEERED FOR PRECISION.
+        </p>
+        <div class="flex gap-6">
+          <span
+            class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-blue-400"
+            data-icon="language"
+            >language</span
+          >
+          <span
+            class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-blue-400"
+            data-icon="verified_user"
+            >verified_user</span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

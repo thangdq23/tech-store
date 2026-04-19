@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Store</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#001b61",
+              "surface-container": "#131342",
+              "surface-bright": "#24255f",
+              "on-secondary-fixed-variant": "#591bdc",
+              "inverse-on-surface": "#50517a",
+              "tertiary-dim": "#ef8cde",
+              "error-container": "#a70138",
+              secondary: "#a68cff",
+              "tertiary-container": "#fe99ed",
+              "on-secondary": "#25006b",
+              "outline-variant": "#43446c",
+              "error-dim": "#d73357",
+              "on-primary-fixed-variant": "#002376",
+              "secondary-dim": "#7e51ff",
+              "secondary-container": "#591adc",
+              "surface-variant": "#1e1f55",
+              "on-tertiary-fixed": "#450042",
+              "primary-fixed": "#809bff",
+              "on-error": "#490013",
+              "on-tertiary-fixed-variant": "#701c6a",
+              outline: "#71729d",
+              "on-tertiary-container": "#661060",
+              "on-primary": "#00257b",
+              "secondary-fixed-dim": "#cabaff",
+              "tertiary-fixed": "#fe99ed",
+              primary: "#94aaff",
+              "secondary-fixed": "#d8caff",
+              "on-tertiary": "#711d6a",
+              "surface-container-highest": "#1e1f55",
+              "on-surface-variant": "#a7a7d5",
+              "tertiary-fixed-dim": "#ef8cde",
+              "on-secondary-fixed": "#3b00a0",
+              "on-surface": "#e5e3ff",
+              "primary-container": "#809bff",
+              "surface-container-low": "#0d0d38",
+              "on-error-container": "#ffb2b9",
+              "on-background": "#e5e3ff",
+              "inverse-primary": "#004eea",
+              "on-primary-fixed": "#000000",
+              error: "#ff6e84",
+              "on-secondary-container": "#e4daff",
+              "surface-tint": "#94aaff",
+              "primary-fixed-dim": "#6c8cff",
+              tertiary: "#ffb0ef",
+              surface: "#08082f",
+              "surface-container-lowest": "#000000",
+              "inverse-surface": "#fcf8ff",
+              "surface-dim": "#08082f",
+              "primary-dim": "#3367ff",
+              background: "#08082f",
+              "surface-container-high": "#18194b",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+    </style>
+  </head>
+  <body>
+    <body class="bg-surface text-on-surface font-body selection:bg-tertiary/30">
+      <header
+        class="fixed top-0 w-full z-50 bg-[#08082f]/80 backdrop-blur-2xl shadow-[0_0_40px_rgba(229,227,255,0.08)]"
+      >
+        <nav class="flex justify-between items-center px-12 h-24 w-full">
+          <div
+            class="text-2xl font-black tracking-tighter text-slate-100 uppercase font-headline"
+          >
+            NEON_CURATOR
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              class="text-blue-400 border-b-2 border-pink-400 pb-1 font-bold font-headline transition-all duration-300"
+              href="#"
+              >Discover</a
+            >
+            <a
+              class="text-slate-400 font-medium hover:text-slate-100 font-headline transition-all duration-300"
+              href="#"
+              >Hardware</a
+            >
+            <a
+              class="text-slate-400 font-medium hover:text-slate-100 font-headline transition-all duration-300"
+              href="#"
+              >Editorial</a
+            >
+            <a
+              class="text-slate-400 font-medium hover:text-slate-100 font-headline transition-all duration-300"
+              href="#"
+              >Archives</a
+            >
+          </div>
+          <div class="flex items-center space-x-6">
+            <div class="relative hidden lg:block">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
+                >search</span
+              >
+              <input
+                class="bg-surface-container-highest border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary w-64 transition-all"
+                placeholder="Search components..."
+                type="text"
+              />
+            </div>
+            <button
+              class="scale-95 active:scale-90 transition-transform hover:bg-blue-900/20 p-2 rounded-full"
+            >
+              <span
+                class="material-symbols-outlined text-blue-400"
+                data-icon="shopping_cart"
+                >shopping_cart</span
+              >
+            </button>
+            <button
+              class="scale-95 active:scale-90 transition-transform hover:bg-blue-900/20 p-2 rounded-full"
+            >
+              <span
+                class="material-symbols-outlined text-blue-400"
+                data-icon="person"
+                >person</span
+              >
+            </button>
+          </div>
+        </nav>
+      </header>
+      <main class="pt-32 pb-20 px-12 max-w-[1600px] mx-auto min-h-screen">
+        <div class="flex flex-col md:flex-row gap-12">
+          <aside class="w-full md:w-64 flex-shrink-0 space-y-10">
+            <div>
+              <h3
+                class="text-label-sm font-bold uppercase tracking-widest text-secondary mb-6 flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >filter_list</span
+                >
+                Category
+              </h3>
+              <div class="space-y-3">
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    checked=""
+                    class="rounded-sm bg-surface-container border-outline-variant text-primary focus:ring-offset-surface"
+                    type="checkbox"
+                  />
+                  <span
+                    class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors"
+                    >Processors</span
+                  >
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    class="rounded-sm bg-surface-container border-outline-variant text-primary focus:ring-offset-surface"
+                    type="checkbox"
+                  />
+                  <span
+                    class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors"
+                    >Neural Modules</span
+                  >
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    class="rounded-sm bg-surface-container border-outline-variant text-primary focus:ring-offset-surface"
+                    type="checkbox"
+                  />
+                  <span
+                    class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors"
+                    >Optic Interfaces</span
+                  >
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    class="rounded-sm bg-surface-container border-outline-variant text-primary focus:ring-offset-surface"
+                    type="checkbox"
+                  />
+                  <span
+                    class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors"
+                    >Storage Arrays</span
+                  >
+                </label>
+              </div>
+            </div>
+            <div>
+              <h3
+                class="text-label-sm font-bold uppercase tracking-widest text-secondary mb-6"
+              >
+                Price Range
+              </h3>
+              <div class="space-y-4">
+                <input
+                  class="w-full h-1 bg-surface-container-highest appearance-none cursor-pointer accent-primary"
+                  max="5000"
+                  min="100"
+                  type="range"
+                />
+                <div
+                  class="flex justify-between text-xs font-mono text-outline"
+                >
+                  <span>$100</span>
+                  <span>$5,000+</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3
+                class="text-label-sm font-bold uppercase tracking-widest text-secondary mb-6"
+              >
+                Brand Authority
+              </h3>
+              <div class="space-y-3">
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    class="bg-surface-container border-outline-variant text-tertiary focus:ring-offset-surface"
+                    name="brand"
+                    type="radio"
+                  />
+                  <span
+                    class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors"
+                    >AETHER_CORE</span
+                  >
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    class="bg-surface-container border-outline-variant text-tertiary focus:ring-offset-surface"
+                    name="brand"
+                    type="radio"
+                  />
+                  <span
+                    class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors"
+                    >VIRTUA_OS</span
+                  >
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    class="bg-surface-container border-outline-variant text-tertiary focus:ring-offset-surface"
+                    name="brand"
+                    type="radio"
+                  />
+                  <span
+                    class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors"
+                    >NEON_GENESIS</span
+                  >
+                </label>
+              </div>
+            </div>
+          </aside>
+
+          <div class="flex-grow">
+            <div class="flex justify-between items-end mb-12">
+              <div>
+                <span
+                  class="text-xs font-bold uppercase tracking-[0.2em] text-tertiary mb-2 block"
+                  >Catalog 01 // Archive</span
+                >
+                <h1
+                  class="text-4xl font-black font-headline tracking-tighter text-on-surface"
+                >
+                  HARDWARE_UNITS
+                </h1>
+              </div>
+              <div class="text-sm text-outline font-mono">
+                Showing 12 of 48 items
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div
+                class="group relative bg-surface-container-low rounded-lg overflow-hidden transition-all duration-500 hover:bg-surface-container-high p-4"
+              >
+                <div
+                  class="aspect-[4/5] bg-surface-container rounded-md overflow-hidden mb-6 flex items-center justify-center p-8 relative"
+                >
+                  <img
+                    class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+                    data-alt="Futuristic high-end graphics card with glowing neon blue accents and geometric metallic heat sink on dark background"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY78W2qh3FQjP8yMiHRZrhbak9i88an6GJ2YLn3PY6eRvJxrJrNLFUToUR8XxADpaeZWT2FxqQYKRylKBeJw7CHMZ4UKxzsguaVAZgTWWFv1GstvcTQuSLyScOQGXlC5SllCBsbcOEwzuy-ylTeC3pwYqgqppGkfXdREHZLUH6yQBB-rfymKmfAFTK1NI9KCyqdhW2nHm-Qz9da4O8isivjMJgo0VeUAlBj_elZ66tuzwtCGWq5yHteTiuJ8EK8oHbUpBTwNZqS_w"
+                  />
+                  <div
+                    class="absolute top-4 left-4 bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider backdrop-blur-md"
+                  >
+                    LIMITED_EDITION
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex justify-between items-start">
+                    <div class="space-y-1">
+                      <p
+                        class="text-[10px] font-bold text-outline uppercase tracking-widest"
+                      >
+                        AETHER_CORE
+                      </p>
+                      <h3
+                        class="text-lg font-bold font-headline leading-tight text-on-surface"
+                      >
+                        AXION-9 NEURAL PROCESSOR
+                      </h3>
+                    </div>
+                    <div class="text-lg font-mono font-bold text-primary">
+                      $1,299.00
+                    </div>
+                  </div>
+                  <button
+                    class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-sm rounded-md transition-all duration-300 hover:shadow-[0_0_25px_rgba(148,170,255,0.3)] active:scale-95 flex items-center justify-center gap-2"
+                  >
+                    <span class="material-symbols-outlined text-lg"
+                      >add_shopping_cart</span
+                    >
+                    ADD_TO_CART
+                  </button>
+                </div>
+              </div>
+
+              <div
+                class="group relative bg-surface-container-low rounded-lg overflow-hidden transition-all duration-500 hover:bg-surface-container-high p-4"
+              >
+                <div
+                  class="aspect-[4/5] bg-surface-container rounded-md overflow-hidden mb-6 flex items-center justify-center p-8 relative"
+                >
+                  <img
+                    class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+                    data-alt="Ultra-thin futuristic tablet device displaying a complex digital blueprint with vibrant magenta glow in a dark studio setting"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUQZc0JbFuDryFV7cM1Hv_TpcdUC1KydIm5O9qrKZkFgo3_9fipuDifYsYE4HnyLhpDO11ErG-rFfexp-ZXA0MJbeZ8mQPAaHQY6E0w350UC05KA0Usj3VY9qOBbPlQoozvyKG0zGWgLYAC0TEEIqg6TnfOX9d7lujPnI1Sn9fJXaK2GdBdan6j0fAhrcs1GbGLt6RlxadG8EKndKZe_uYrlT6LQNAKgVMyQwe8JYTOGpwbymBqJ6MbooqA0YC96eJUKfyOn77JMM"
+                  />
+                </div>
+                <div class="space-y-4">
+                  <div class="flex justify-between items-start">
+                    <div class="space-y-1">
+                      <p
+                        class="text-[10px] font-bold text-outline uppercase tracking-widest"
+                      >
+                        VIRTUA_OS
+                      </p>
+                      <h3
+                        class="text-lg font-bold font-headline leading-tight text-on-surface"
+                      >
+                        VO-7 HOLOGRAPHIC ARRAY
+                      </h3>
+                    </div>
+                    <div class="text-lg font-mono font-bold text-primary">
+                      $849.00
+                    </div>
+                  </div>
+                  <button
+                    class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-sm rounded-md transition-all duration-300 hover:shadow-[0_0_25px_rgba(148,170,255,0.3)] active:scale-95 flex items-center justify-center gap-2"
+                  >
+                    <span class="material-symbols-outlined text-lg"
+                      >add_shopping_cart</span
+                    >
+                    ADD_TO_CART
+                  </button>
+                </div>
+              </div>
+
+              <div
+                class="group relative bg-surface-container-low rounded-lg overflow-hidden transition-all duration-500 hover:bg-surface-container-high p-4"
+              >
+                <div
+                  class="aspect-[4/5] bg-surface-container rounded-md overflow-hidden mb-6 flex items-center justify-center p-8 relative"
+                >
+                  <img
+                    class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+                    data-alt="Collection of high-performance technical hardware components including RAM modules and heat sinks with sharp mechanical edges"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNCa7uYsWbaB8pkfSZKT8zRdhvQaDicgRe2lmmEhbL0Lgp1YnMOXlcxz4HIez4bSS6eLOHxWNTzRyyf_rQS-0ibIX8HPcdPkc-TyHpyyUyQS1kp3voUtnEP3s8KYWLfLRZhLLuKVJb04_kETEJiOyN3JNRxpt5XGkZJZQbTRWkYNDlyA6vxcGE4xOuxF2XbrP3BWjaSYYWw_Q1pJ-Wmtlqk9fjjmBZDZcampKmX9cfwsITd50tG_AL7WgJdt3W1ug8OMknV202DXU"
+                  />
+                </div>
+                <div class="space-y-4">
+                  <div class="flex justify-between items-start">
+                    <div class="space-y-1">
+                      <p
+                        class="text-[10px] font-bold text-outline uppercase tracking-widest"
+                      >
+                        NEON_GENESIS
+                      </p>
+                      <h3
+                        class="text-lg font-bold font-headline leading-tight text-on-surface"
+                      >
+                        SYNTH-STORAGE 4TB GEN_5
+                      </h3>
+                    </div>
+                    <div class="text-lg font-mono font-bold text-primary">
+                      $420.00
+                    </div>
+                  </div>
+                  <button
+                    class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-sm rounded-md transition-all duration-300 hover:shadow-[0_0_25px_rgba(148,170,255,0.3)] active:scale-95 flex items-center justify-center gap-2"
+                  >
+                    <span class="material-symbols-outlined text-lg"
+                      >add_shopping_cart</span
+                    >
+                    ADD_TO_CART
+                  </button>
+                </div>
+              </div>
+
+              <div
+                class="group relative bg-surface-container-low rounded-lg overflow-hidden transition-all duration-500 hover:bg-surface-container-high p-4"
+              >
+                <div
+                  class="aspect-[4/5] bg-surface-container rounded-md overflow-hidden mb-6 flex items-center justify-center p-8 relative"
+                >
+                  <img
+                    class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+                    data-alt="Sleek silver futuristic headphones with glowing LED rings and carbon fiber textures sitting on a dark reflective surface"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDchT46A5URGzwuxLlFGF4lsMDngMrxiMd1Ebmp8V5DFQkucP5uOY1-pQvC9VAvg2LR7mXJs0C6QqlaFy4ck_K8LwIz1grIv8E0l3IPFW2a203gHsz0Dnra8dz-42zcO3-evA5hWXr99JTyGtrRiZMbundGVe9i-mw2sssPZK6GANlUxEXQBlOxenwBCxVqwIc-B1YcadcwriVW81giqngtXQyikP0q6jlgAezlsq2pFEvS1MKbWW5Sf_r8iaQ1HwrPzow-NIn1Y3g"
+                  />
+                </div>
+                <div class="space-y-4">
+                  <div class="flex justify-between items-start">
+                    <div class="space-y-1">
+                      <p
+                        class="text-[10px] font-bold text-outline uppercase tracking-widest"
+                      >
+                        AETHER_CORE
+                      </p>
+                      <h3
+                        class="text-lg font-bold font-headline leading-tight text-on-surface"
+                      >
+                        SONIC_WAVE X5 HEADSET
+                      </h3>
+                    </div>
+                    <div class="text-lg font-mono font-bold text-primary">
+                      $2,100.00
+                    </div>
+                  </div>
+                  <button
+                    class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-sm rounded-md transition-all duration-300 hover:shadow-[0_0_25px_rgba(148,170,255,0.3)] active:scale-95 flex items-center justify-center gap-2"
+                  >
+                    <span class="material-symbols-outlined text-lg"
+                      >add_shopping_cart</span
+                    >
+                    ADD_TO_CART
+                  </button>
+                </div>
+              </div>
+              <!-- Product Card 5 -->
+              <div
+                class="group relative bg-surface-container-low rounded-lg overflow-hidden transition-all duration-500 hover:bg-surface-container-high p-4"
+              >
+                <div
+                  class="aspect-[4/5] bg-surface-container rounded-md overflow-hidden mb-6 flex items-center justify-center p-8 relative"
+                >
+                  <img
+                    class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+                    data-alt="Minimalist professional PC workstation with sleek black case and subtle internal purple ambient lighting on dark mahogany desk"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKOJtzRkNToTZM3QmmjSR-2Wi1ao2X3sn8HPTMAvGMm8Y3bOw94tTVlZHN156k7Q1naq_vWAVYmlwTH51X-6hd8o6w4R_7MTy0M1Um_F5FbAnejOytt07E6qMSUJMrhsTBWyTRy_8pZWFWiT2DgANYK_geenPhorM-Q01o02Ct9p9lvIYo9HqRI3yrgNVF9iO62AanQVrogs7DyjdH8CgW03NnSsvmshJXXWzwS_zt2sVk-_MXt-1z11TgC59c7WKpeH17lWCQjDc"
+                  />
+                </div>
+                <div class="space-y-4">
+                  <div class="flex justify-between items-start">
+                    <div class="space-y-1">
+                      <p
+                        class="text-[10px] font-bold text-outline uppercase tracking-widest"
+                      >
+                        VIRTUA_OS
+                      </p>
+                      <h3
+                        class="text-lg font-bold font-headline leading-tight text-on-surface"
+                      >
+                        STATION_01 MODULAR PC
+                      </h3>
+                    </div>
+                    <div class="text-lg font-mono font-bold text-primary">
+                      $4,500.00
+                    </div>
+                  </div>
+                  <button
+                    class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-sm rounded-md transition-all duration-300 hover:shadow-[0_0_25px_rgba(148,170,255,0.3)] active:scale-95 flex items-center justify-center gap-2"
+                  >
+                    <span class="material-symbols-outlined text-lg"
+                      >add_shopping_cart</span
+                    >
+                    ADD_TO_CART
+                  </button>
+                </div>
+              </div>
+
+              <div
+                class="group relative bg-surface-container-low rounded-lg overflow-hidden transition-all duration-500 hover:bg-surface-container-high p-4"
+              >
+                <div
+                  class="aspect-[4/5] bg-surface-container rounded-md overflow-hidden mb-6 flex items-center justify-center p-8 relative"
+                >
+                  <img
+                    class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+                    data-alt="Close up of mechanical keyboard switches with RGB backlighting reflecting off dark keycaps in a high-tech studio"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPNuCAQvH0pnfEWzQ0ZpN43UU83BVc7xaUpjfABAh3-W0DnxarBNMnX4JQdsR-ev0Y-DyYtsJEXiuhI66DS_1j1jtwMRPlg4GKF1MLWvoe87VX5d8KUNABxtavGRZJv7ntqy9w2-tOoRbklIemSbiUqt66eHROZRJ7yJ6UJanCHfdZx83ElLjrr69AYD_wGv0HXuVmCy5_HdQMHfUXvzFcpIRnH3YyQC5BLV0mjJukJRmS0kM3iaUHPJFDJbrnCqS_bZ62fP3WAyY"
+                  />
+                </div>
+                <div class="space-y-4">
+                  <div class="flex justify-between items-start">
+                    <div class="space-y-1">
+                      <p
+                        class="text-[10px] font-bold text-outline uppercase tracking-widest"
+                      >
+                        NEON_GENESIS
+                      </p>
+                      <h3
+                        class="text-lg font-bold font-headline leading-tight text-on-surface"
+                      >
+                        KINETIC TYPE-R DECK
+                      </h3>
+                    </div>
+                    <div class="text-lg font-mono font-bold text-primary">
+                      $299.00
+                    </div>
+                  </div>
+                  <button
+                    class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-sm rounded-md transition-all duration-300 hover:shadow-[0_0_25px_rgba(148,170,255,0.3)] active:scale-95 flex items-center justify-center gap-2"
+                  >
+                    <span class="material-symbols-outlined text-lg"
+                      >add_shopping_cart</span
+                    >
+                    ADD_TO_CART
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="mt-20 flex justify-center items-center gap-4">
+              <button
+                class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors"
+              >
+                <span class="material-symbols-outlined text-outline"
+                  >chevron_left</span
+                >
+              </button>
+              <div class="flex gap-2">
+                <button
+                  class="w-12 h-12 rounded-full bg-primary text-on-primary font-bold"
+                >
+                  1
+                </button>
+                <button
+                  class="w-12 h-12 rounded-full hover:bg-surface-container text-on-surface transition-colors"
+                >
+                  2
+                </button>
+                <button
+                  class="w-12 h-12 rounded-full hover:bg-surface-container text-on-surface transition-colors"
+                >
+                  3
+                </button>
+                <span class="flex items-center text-outline">...</span>
+                <button
+                  class="w-12 h-12 rounded-full hover:bg-surface-container text-on-surface transition-colors"
+                >
+                  8
+                </button>
+              </div>
+              <button
+                class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors"
+              >
+                <span class="material-symbols-outlined text-outline"
+                  >chevron_right</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="bg-[#0d0d38] w-full py-20 mt-32">
+        <div
+          class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-7xl mx-auto"
+        >
+          <div class="space-y-6">
+            <div
+              class="text-lg font-bold text-slate-100 font-headline uppercase"
+            >
+              NEON_CURATOR
+            </div>
+            <p class="text-sm text-slate-500 font-body leading-relaxed">
+              Defining the threshold of digital performance. Engineered for
+              precision and aesthetic dominance.
+            </p>
+          </div>
+          <div class="space-y-6">
+            <h4
+              class="text-blue-400 font-bold font-headline text-sm uppercase tracking-widest"
+            >
+              Connect
+            </h4>
+            <div class="flex flex-col space-y-4">
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm font-label hover:translate-x-1 transition-transform"
+                href="#"
+                >Instagram</a
+              >
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm font-label hover:translate-x-1 transition-transform"
+                href="#"
+                >X / Twitter</a
+              >
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm font-label hover:translate-x-1 transition-transform"
+                href="#"
+                >Discord</a
+              >
+            </div>
+          </div>
+          <div class="space-y-6">
+            <h4
+              class="text-blue-400 font-bold font-headline text-sm uppercase tracking-widest"
+            >
+              Support
+            </h4>
+            <div class="flex flex-col space-y-4">
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm font-label hover:translate-x-1 transition-transform"
+                href="#"
+                >Technical Support</a
+              >
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm font-label hover:translate-x-1 transition-transform"
+                href="#"
+                >Shipping &amp; Returns</a
+              >
+              <a
+                class="text-slate-500 hover:text-pink-400 text-sm font-label hover:translate-x-1 transition-transform"
+                href="#"
+                >Store Locator</a
+              >
+            </div>
+          </div>
+          <div class="space-y-6">
+            <h4
+              class="text-blue-400 font-bold font-headline text-sm uppercase tracking-widest"
+            >
+              Newsletter
+            </h4>
+            <div class="relative">
+              <input
+                class="w-full bg-surface-variant/40 border-none rounded-md py-3 px-4 text-xs focus:ring-1 focus:ring-tertiary"
+                placeholder="Join the signal..."
+                type="email"
+              />
+              <button
+                class="absolute right-2 top-1/2 -translate-y-1/2 text-tertiary hover:text-on-surface"
+              >
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mt-20 border-t border-outline-variant/10 pt-10 text-center">
+          <p class="text-xs text-slate-500 font-label tracking-wide">
+            © 2024 NEON CURATOR. ENGINEERED FOR PRECISION.
+          </p>
+        </div>
+      </footer>
+    </body>
+  </body>
+</html>
